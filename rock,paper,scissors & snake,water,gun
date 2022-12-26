@@ -1,0 +1,70 @@
+import random
+x="rock"
+y="paper"
+z="scissors"
+mylist=[x,y,z] 
+def cont(player): 
+  mylist=[x,y,z] 
+  comp=random.choice(mylist)
+  if player==comp:
+      print("Computer player:"+comp)
+      print("You played: "+player)
+      print("Tie..")
+  elif player==x:
+     if comp==y:
+          print("Computer played: "+comp)
+          print("You played: "+player)
+          print("Computer Wins..") 
+     if comp==z:
+         print("Computer played: "+comp)
+         print("You played: "+player)
+         print("Player wins..")
+  elif player==z:
+      if comp==y:
+         print("Computer played: "+comp)
+         print("You played: "+player)
+         print("Player Wins..") 
+      if comp==x:
+         print("Computer played: "+comp)
+         print("You played: "+player)
+         print("Computer wins..")
+  elif player==y:
+     if comp==x:
+         print("Computer played: "+comp)
+         print("You played: "+player)
+         print("Player Wins..") 
+     if comp==z:
+         print("Computer played: "+comp)
+         print("You played: "+player)
+         print("Computer wins..")
+a=int(input("Press 1.for rock,paper,scissors    2.for snake,water,gun: "))
+if a==2: 
+    x="snake"
+    y="gun"
+    z="water"
+    player=input("Snake,Water or Gun? ").lower()
+    cont(player)
+
+else:
+   player=None
+   while player not in mylist:
+     player=input("Rock paper or scissors?: ").lower()
+   cont(player)
+while True:
+     user=input("Would you like to play again? Yes or No? ").lower()
+     if user=="yes":
+        a=int(input("Press 1.for rock,paper,scissors    2.for snake,water,gun: "))
+        if a==2: 
+           x="snake"
+           y="gun"
+           z="water"
+           player=input("Snake,Water or Gun? ").lower()
+           cont(player)
+        else:
+         player=None
+         while player not in mylist:
+          player=input("Rock paper or scissors?: ").lower()
+          cont(player)
+     else:
+        print("Thank you for playing")
+        break
